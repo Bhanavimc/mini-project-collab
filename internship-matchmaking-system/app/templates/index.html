@@ -1,0 +1,24 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Matchmaking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Internship Matchmaking System!</h1>
+    
+    <!-- Show login link if user is not logged in -->
+    {% if 'user_id' not in session %}
+        <a href="{{ url_for('main.login') }}">Login</a>
+        <br>
+        <a href="{{ url_for('main.register') }}">Register</a> <!-- Link to register page -->
+    <!-- Show logout link if user is logged in -->
+    {% else %}
+        <p>Welcome, {{ session['user_id'] }}!</p> <!-- You can display user's name or email here -->
+        <a href="{{ url_for('main.logout') }}">Logout</a>
+    {% endif %}
+</body>
+</html>

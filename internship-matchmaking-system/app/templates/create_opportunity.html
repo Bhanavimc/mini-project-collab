@@ -1,0 +1,26 @@
+<!-- app/templates/create_opportunity.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Opportunity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Create a New Internship Opportunity</h1>
+    <form method="POST">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required></textarea>
+        
+        <label for="skills_required">Skills Required</label>
+        <input type="text" id="skills_required" name="skills_required" required>
+        
+        <button type="submit">Create Opportunity</button>
+    </form>
+    
+</body>
+</html>
